@@ -1,5 +1,7 @@
+import { Home } from "./pages/home";
+
 function App(): JSX.Element {
-  return <h1>React boilerplate</h1>;
+  return <Home />;
 }
 
 export default App;
