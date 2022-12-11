@@ -1,20 +1,29 @@
 import create from "zustand";
 import { API_URL } from "../settings/constants";
-import { PaginationInfoType, CharacterType } from "../@types/sharedTypes";
+import { CharacterType, PaginationInfoType } from "../@types/sharedTypes";
 
 interface CharactersStateType {
+  page: number;
   loading: boolean;
-  fetchCharacters: any;
   paginationInfo: PaginationInfoType | {};
   charactersResult: CharacterType[];
+
+  changePage: any;
+  fetchCharacters: any;
 }
 
-const asyncCharactersSlice = (set: any): CharactersStateType => ({
+const asyncCharactersSlice = (set: any, get: any): CharactersStateType => ({
+  page: 1,
   loading: true,
   paginationInfo: {},
   charactersResult: [],
+
+  changePage: (page: number) => set({ page, loading: true }),
+
   fetchCharacters: async () => {
-    const response = await fetch(`${API_URL}/character`);
+    const page = get().page;
+    const requestUrl = `${API_URL}/character?page=${page}`;
+    const response = await fetch(requestUrl);
     const responseToJson = await response.json();
 
     set({

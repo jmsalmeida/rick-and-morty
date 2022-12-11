@@ -17,6 +17,7 @@
     "prettier": "^2.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-paginate": "^8.1.4",
     "styled-components": "^5.3.6",
     "zustand": "^4.1.5"
   },

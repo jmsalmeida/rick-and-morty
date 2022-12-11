@@ -10,9 +10,5 @@ export function Home(): JSX.Element {
     fetchCharacters();
   }, [fetchCharacters]);
 
-  return (
-    <div>
-      <CharactersList />
-    </div>
-  );
+  return <CharactersList />;
 }
