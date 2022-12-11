@@ -12,7 +12,6 @@ export function Home(): JSX.Element {
 
   return (
     <div>
-      <h2>Characters List</h2>
       <CharactersList />
     </div>
   );
