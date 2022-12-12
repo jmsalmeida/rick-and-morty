@@ -21,7 +21,7 @@ export function CustomInput({
 
   return (
     <S.InputContainer>
-      {label != null && <label>{label}</label>}
+      {label != null && <label data-testid="label-content">{label}</label>}
 
       <input
         type="text"

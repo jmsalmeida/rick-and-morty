@@ -40,6 +40,7 @@ export function FiltersForm(): JSX.Element {
         <CustomInput
           inputValue={filters.name}
           placeholder="Find by the character name"
+          // TODO: Add debounce to execute this filter
           onChange={(nextValue: string) => setFilterName("name", nextValue)}
         />
 

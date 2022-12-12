@@ -29,8 +29,8 @@ export function StatusBadge({ status }: StatusBadgeProps): JSX.Element {
 
   return (
     <S.StatusBadgeWrapper statusColor={statusColor()}>
-      <span></span>
-      <p>{status}</p>
+      <span data-testid="status-pin"></span>
+      <p data-testid="status-content">{status}</p>
     </S.StatusBadgeWrapper>
   );
 }

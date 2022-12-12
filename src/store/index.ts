@@ -23,6 +23,7 @@ interface CharactersStateType {
 const asyncCharactersSlice = (set: any, get: any): CharactersStateType => ({
   page: 1,
   loading: true,
+  // TODO: Improve notFound stractegy
   notFound: false,
   charactersResult: [],
   paginationInfo: { count: 0, pages: 0, next: "", prev: "" },
@@ -43,6 +44,7 @@ const asyncCharactersSlice = (set: any, get: any): CharactersStateType => ({
       filters: { name: "", gender: "", status: "", species: "" },
     }),
 
+  // TODO: Split into small blocks and refactoring
   fetchCharacters: async () => {
     set({ loading: true });
 
@@ -56,13 +58,16 @@ const asyncCharactersSlice = (set: any, get: any): CharactersStateType => ({
       );
     };
 
+    // TODO: Improve url serch params to only send the params that was being set
     const searchParams: string = new URLSearchParams({ ...filters }).toString();
     const urlParams: string = appliedFilters()
       ? `${searchParams}`
-      : `page=${page}`;
+      : // TODO: TS misunderstanding
+        `page=${page}`;
 
     try {
       const response = await fetch(`${API_URL}/character?${urlParams}`);
+      // TODO: TS misunderstanding
       if (!response.ok) throw response;
 
       const responseToJson = await response.json();

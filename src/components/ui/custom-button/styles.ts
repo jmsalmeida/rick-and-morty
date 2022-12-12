@@ -10,7 +10,6 @@ export const ButtonContainer = styled.button<{
   border-radius: 5px;
   color: #fff;
   font-weight: 700;
-  // background-color: #FF6647;
   background-color: ${(props) =>
     props.danger === true ? "#ff6647" : "#63d882"};
 
