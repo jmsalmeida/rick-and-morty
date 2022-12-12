@@ -15,7 +15,7 @@ export function CharactersList(): JSX.Element {
 
   return (
     <S.CharactersListWrapper>
-      <h2>Characters List</h2>
+      <S.CharactersListTitle>Characters List</S.CharactersListTitle>
 
       {loading ? (
         <Loading />

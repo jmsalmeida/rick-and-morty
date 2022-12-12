@@ -14,3 +14,10 @@ export interface CharacterType {
   species: string;
   image: string;
 }
+
+export interface FilterTypes {
+  name: string;
+  gender: string;
+  status: string;
+  species: string;
+}

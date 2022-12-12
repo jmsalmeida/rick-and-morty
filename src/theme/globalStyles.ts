@@ -7,8 +7,8 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     scroll-behavior: smooth;
     box-sizing: border-box;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: repeat;
     background-image: url(${spaceBackground});
     font-family: Open-Sans, Helvetica, Sans-Serif;
   }
